@@ -1,0 +1,6 @@
+kubectl run curl-test -n tp-docker-k8s --rm -i --restart=Never --image=curlimages/curl -- curl -s http://hello-world-clusterip/
+
+Hello World
+
+App: hello-world-tp
+Environment: development

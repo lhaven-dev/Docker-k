@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world-pod
+  namespace: tp-docker-k8s
+  labels:
+    app: hello-world
+spec:
+  containers:
+    - name: hello-world
+      image: hello-world-tp:1.0
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 3000
+          name: http
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "128Mi"
+          cpu: "100m"

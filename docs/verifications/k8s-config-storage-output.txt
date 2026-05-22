@@ -1,0 +1,12 @@
+kubectl exec -n tp-docker-k8s hello-world-configured-6c947d767b-5ngzj -- env | findstr APP_NAME ENVIRONMENT DB_
+
+APP_NAME=hello-world-tp
+ENVIRONMENT=production
+PORT=3000
+DB_USERNAME=tp_user
+DB_PASSWORD=tp_password_secret_2026
+
+kubectl exec -n tp-docker-k8s hello-world-configured-6c947d767b-5ngzj -- sh -c "echo test-pvc > /data/test.txt && cat /data/test.txt && cat /etc/app-config/ENVIRONMENT"
+
+test-pvc
+production

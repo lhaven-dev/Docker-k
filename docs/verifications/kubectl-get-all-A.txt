@@ -1,0 +1,34 @@
+﻿NAMESPACE       NAME                                          READY   STATUS    RESTARTS   AGE
+kube-system     pod/coredns-668d6bf9bc-2x64w                  1/1     Running   0          5m50s
+kube-system     pod/coredns-668d6bf9bc-nqxgz                  1/1     Running   0          5m50s
+kube-system     pod/etcd-docker-desktop                       1/1     Running   0          5m54s
+kube-system     pod/kube-apiserver-docker-desktop             1/1     Running   0          5m54s
+kube-system     pod/kube-controller-manager-docker-desktop    1/1     Running   0          5m54s
+kube-system     pod/kube-proxy-cptdf                          1/1     Running   0          5m50s
+kube-system     pod/kube-scheduler-docker-desktop             1/1     Running   0          5m54s
+kube-system     pod/storage-provisioner                       1/1     Running   0          5m48s
+kube-system     pod/vpnkit-controller                         1/1     Running   0          5m48s
+tp-docker-k8s   pod/hello-world-785dbc54c-6h2t5               1/1     Running   0          46s
+tp-docker-k8s   pod/hello-world-785dbc54c-rwpq5               1/1     Running   0          82s
+tp-docker-k8s   pod/hello-world-785dbc54c-twjn8               1/1     Running   0          82s
+tp-docker-k8s   pod/hello-world-configured-6c947d767b-5ngzj   1/1     Running   0          81s
+tp-docker-k8s   pod/hello-world-pod                           1/1     Running   0          82s
+
+NAMESPACE       NAME                            TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                  AGE
+default         service/kubernetes              ClusterIP   10.96.0.1     <none>        443/TCP                  5m57s
+kube-system     service/kube-dns                ClusterIP   10.96.0.10    <none>        53/UDP,53/TCP,9153/TCP   5m55s
+tp-docker-k8s   service/hello-world-clusterip   ClusterIP   10.108.0.1    <none>        80/TCP                   81s
+tp-docker-k8s   service/hello-world-nodeport    NodePort    10.96.87.93   <none>        80:30080/TCP             81s
+
+NAMESPACE     NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-system   daemonset.apps/kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   5m55s
+
+NAMESPACE       NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+kube-system     deployment.apps/coredns                  2/2     2            2           5m55s
+tp-docker-k8s   deployment.apps/hello-world              3/3     3            3           82s
+tp-docker-k8s   deployment.apps/hello-world-configured   1/1     1            1           81s
+
+NAMESPACE       NAME                                                DESIRED   CURRENT   READY   AGE
+kube-system     replicaset.apps/coredns-668d6bf9bc                  2         2         2       5m50s
+tp-docker-k8s   replicaset.apps/hello-world-785dbc54c               3         3         3       82s
+tp-docker-k8s   replicaset.apps/hello-world-configured-6c947d767b   1         1         1       81s

@@ -1,0 +1,8 @@
+curl http://localhost:30080/
+Hello World
+
+App: hello-world-tp
+Environment: development
+
+curl http://localhost:30080/health
+{"status":"ok"}
